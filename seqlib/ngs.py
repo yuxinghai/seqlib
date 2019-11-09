@@ -111,9 +111,13 @@ def fetch_juncfile(bam, url=False, dir=None, uniq=False, stranded=False,
             chrom, pos1, pos2, strand = junc.split()
             pos1 = int(pos1)
             pos2 = int(pos2)
-            start = pos1 - 10
-            end = pos2 + 10
-            offset = pos2 - start
+            ## modify this junct site 
+            # start = pos1 - 10
+            # end = pos2 + 10
+            # offset = pos2 - start
+            start = pos1
+            end = pos2
+            offset = po2 - pos1
             junc_info = '%s\t%d\t%d\tjunc/%d\t0\t%s'
             junc_info += '\t%d\t%d\t0,0,0\t2\t10,10\t0,%d\n'
             tmp.write(junc_info % (chrom, start, end, junc_lst[junc],
